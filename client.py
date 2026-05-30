@@ -9,8 +9,13 @@ HOST = '127.0.0.1'
 PORT = int(os.getenv("PORT"))
 
 def main():
-    nome = input("Seu nome: ").strip()
-    aposta = int(input("Seu número (0 a 999): ").strip())
+    try:
+        nome = input("Seu nome: ").strip()
+        aposta = int(input("Seu número (0 a 999): ").strip())
+        if not 0 <= aposta <= 999:
+            raise ValueError
+    except ValueError as e:
+        return e
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))

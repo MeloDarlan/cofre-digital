@@ -31,8 +31,7 @@ def call_client(conn, addr):
                 break          # conseguiu desserializar: objeto completo
             except Exception:
                 continue
-
-        nome   = pedido["nome"]
+        nome = pedido["nome"]
         aposta = pedido["aposta"]
 
         print(f"{nome} apostou {aposta}, sorteado {sorteado}")
