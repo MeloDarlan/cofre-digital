@@ -36,7 +36,6 @@ def call_client(conn, addr):
 
         print(f"{nome} apostou {aposta}, sorteado {sorteado}")
 
-# ── Race Condition ───────────────────────────────
         with lock:
             fundo += 10.0
             if aposta == sorteado:
@@ -52,7 +51,6 @@ def call_client(conn, addr):
                     f"O cofre tem R$ {fundo:.2f} acumulados."
                 )
 
-        # Enviar resposta
         resposta = pickle.dumps({"mensagem": mensagem})
         conn.sendall(resposta)
 
@@ -61,7 +59,6 @@ def call_client(conn, addr):
     finally:
         conn.close()
         print(f"[-] Conexão encerrada: {addr}")
-
 
 def main():
     servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

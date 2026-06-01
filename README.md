@@ -69,13 +69,13 @@ PORT=5000
 Abra um terminal, ative o venv e execute:
 
 ```bash
-python servidor.py
+python server.py
 ```
 
 O servidor ficará aguardando conexões:
 
 ```
-Cofre Digital aguardando conexões em 0.0.0.0:5000 …
+Cofre Digital iniciado: 0.0.0.0:5000 …
 ```
 
 ### Cliente
@@ -83,7 +83,7 @@ Cofre Digital aguardando conexões em 0.0.0.0:5000 …
 Em outro terminal, ative o venv e execute:
 
 ```bash
-python cliente.py
+python client.py
 ```
 
 Informe seu nome e um número:
@@ -94,18 +94,18 @@ Seu número (0 a 999): 342
 Código Errado, Maria. O cofre tem R$ 110.00 acumulados.
 ```
 
-## Estrutura do projeto
-
-```
-cofre-digital/
-├── server.py       # Processo servidor (multithreaded)
-├── client.py        # Processo cliente
-├── .env              # Configuração de host e porta (não versionar)
-├── requirements.txt  # Dependências do projeto
-└── README.md
-```
-
 ## Observações
 
 - O fundo inicial do servidor começa em **R$ 100,00**
 - Cada tentativa adiciona **R$ 10,00** ao fundo
+
+### Agentes Utilizados
+
+**Sonnet 4.6 (Claude AI)**: Utilizado como ferramenta de apoio para:
+  - Esclarecimento de conceitos de lock dentro da biblioteca de threads;
+  - Auxílio na elaboração de documentação como esse README;
+  - Suporte na identificação e correção de erros.
+
+### Responsabilidade Acadêmica
+
+A Inteligência Artificial foi empregada exclusivamente como ferramenta de suporte ao processo de aprendizagem e desenvolvimento. Todas as decisões de projeto, implementações finais, validações e integrações foram realizadas e revisadas pelos autores do trabalho.
