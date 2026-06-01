@@ -36,7 +36,7 @@ def call_client(conn, addr):
 
         print(f"{nome} apostou {aposta}, sorteado {sorteado}")
 
-# ── Utilizando o lock para evitar Race Condition ───────────────────────────────
+# ── Race Condition ───────────────────────────────
         with lock:
             fundo += 10.0
             if aposta == sorteado:

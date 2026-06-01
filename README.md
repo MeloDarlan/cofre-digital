@@ -25,7 +25,7 @@ A comunicação é feita via **Sockets TCP**. O servidor é **multithreaded**, c
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/cofre-digital.git
+git clone https://github.com/MeloDarlan/cofre-digital.git
 cd cofre-digital
 ```
 

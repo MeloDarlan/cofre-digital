@@ -15,13 +15,13 @@ def main():
         if not 0 <= aposta <= 999:
             raise ValueError
     except ValueError as e:
-        return e
+        return print(f"Erro: {e}")
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))
 
         pedido = {"nome": nome, "aposta": aposta}
-        s.sendall(pickle.dumps(pedido)) # pickle para converter o dict em bytes
+        s.sendall(pickle.dumps(pedido)) # converter o dict em bytes
 
         dados = b""
         while True:
